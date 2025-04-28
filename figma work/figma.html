@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Style Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"> TouringZone</div>
+            <ul class="nav-menu">
+                <li><a href="https://www.figma.com/design/">Product</a></li>
+                <li><a href="https://www.figma.com/design-systems/">Solutions</a></li>
+                <li><a href="https://www.figma.com/enterprise/">Enterprise</a></li>
+                <li><a href="https://www.figma.com/pricing/">Pricing</a></li>
+                <li><a href="https://www.figma.com/login" class="btn login-btn">Login</a></li>
+                <li><a href="https://www.figma.com/signup" class="btn signup-btn">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Ready To Fly, First Class Private Jets and Explore Corners Of The Earth</h1>
+            <p>Join us today and begin a new journey with TouringZone. <br> Start now or forever remain classless</p>
+            <a href="#" class="btn cta-btn">Start for Free</a>
+        </div>
+        <div class="hero-images">
+            <img src="newfig1.jpg" alt="Design1" class="float-img img1">
+            <img src="newfig2.jpg" alt="Design2" class="float-img img2">
+        </div>
+    </header>
+
+    <section class="netflix-slider">
+        <h2>Featured Movies</h2>
+        <div class="slider-container">
+          <button class="slider-btn left" onclick="slideLeft()">&#10094;</button>
+          <div class="slider" id="movieSlider">
+            <img src="iq1.jpg" alt="Movie 1">
+            <img src="iq2.jpg" alt="Movie 2">
+            <img src="iq3.jpg" alt="Movie 3">
+            <img src="iq4.jpg" alt="Movie 4">
+            <img src="iq5.jpg" alt="Movie 5">
+            <img src="iq6.jpg" alt="Movie 6">
+            <img src="iq7.jpg" alt="Movie 7">
+            <img src="iq8.jpg" alt="Movie 8">
+            <img src="iq9.jpg" alt="Movie 9">
+          </div>
+          <button class="slider-btn right" onclick="slideRight()">&#10095;</button>
+        </div>
+      </section>
+      
+      <script>
+        function slideLeft() {
+          const slider = document.getElementById("movieSlider");
+          slider.scrollLeft -= 300;
+        }
+      
+        function slideRight() {
+          const slider = document.getElementById("movieSlider");
+          slider.scrollLeft += 300;
+        }
+      </script>
+
+      
+      <script>
+        let slideIndex = 10;
+        showSlides();
+      
+        function showSlides() {
+          const slides = document.querySelectorAll('.slide');
+          slides.forEach(slide => slide.style.display = "none");
+          slideIndex++;
+          if (slideIndex > slides.length) slideIndex = 1;
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+      
+        function plusSlides(n) {
+          slideIndex += n - 1;
+          showSlides();
+        }
+      </script>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Powerful Tools for Modern Teams</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Real-time Collaboration</h3>
+                <p>Work seamlessly with your team from anywhere.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Design Systems</h3>
+                <p>Maintain consistency and scale your design process.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Interactive Prototypes</h3>
+                <p>Bring your designs to life without writing code.</p>    
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h4>TouringZone</h4>
+                <p>Flying Made collaborative and easy.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
